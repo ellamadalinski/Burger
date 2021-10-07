@@ -8,20 +8,50 @@
 import Foundation
 import UIKit
 
+
+enum burgerTypes{
+    case chicago, atlanta, hawaiian, wisconsin
+}
+enum burgerCooked{
+    case rare, medium, mediumWell, well
+}
+
+
 public class Burger{
     
-    //var type = getType()
+    var type : burgerTypes
+    var cooked : burgerCooked
+    var toppings : [String] = []
     
     
-    enum burgerTypes: String{
-        case chicago, atlanta, hawaiian, wisconsin
-    }
-    enum burgerCooked: String{
-        case rare, medium, mediumWell, well
-    }
-    
-    init(type: String, cooked: String){
+    init(t : Int, c : Int, top : [String], p : Double){
+        switch t {
+        case 0:
+            type = .chicago
+        case 1:
+            type = .atlanta
+        case 2:
+            type = .hawaiian
+        case 4:
+            type = .wisconsin
+        default:
+            type = .chicago
+        }
         
+        switch c {
+        case 0:
+            cooked = .rare
+        case 1:
+            cooked = .medium
+        case 2:
+            cooked = .mediumWell
+        case 3:
+            cooked = .well
+        default:
+            cooked = .medium
+        }
+        
+        toppings = top
     }
     
     
