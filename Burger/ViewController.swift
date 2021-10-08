@@ -149,6 +149,7 @@ class ViewController: UIViewController {
         avocadosOutlet.backgroundColor = UIColor.lightGray
         peppersOutlet.backgroundColor = UIColor.lightGray
         mushroomsOutlet.backgroundColor = UIColor.lightGray
+        price = 8
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
