@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="36J-X8-Frn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="36J-X8-Frn">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -82,11 +83,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Click to See Everything You've Ordered">
+                                <state key="normal" title="Click to View Your Order">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cGs-En-HPP" kind="show" id="NJb-vB-llK"/>
+                                    <segue destination="cGs-En-HPP" kind="show" identifier="toSecondVC" id="NJb-vB-llK"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="burger" translatesAutoresizingMaskIntoConstraints="NO" id="NQY-uY-hx8">
@@ -264,7 +265,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Backbreaking Burgers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KkZ-hf-sf9">
-                                <rect key="frame" x="31" y="105" width="329" height="42"/>
+                                <rect key="frame" x="31" y="75" width="329" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.91345448721653233" blue="0.74720305642770357" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
@@ -281,22 +282,52 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="d2d-yE-YaW"/>
+                    <connections>
+                        <outlet property="avocadosOutlet" destination="fUQ-Lw-0Q9" id="fmj-Qr-lzH"/>
+                        <outlet property="baconOutlet" destination="Pzs-Ou-gbH" id="C30-wF-7mR"/>
+                        <outlet property="blueCheeseOutlet" destination="jfF-BV-Ku2" id="FYl-AQ-yUU"/>
+                        <outlet property="cheeseOutlet" destination="wYj-8v-XeY" id="hzd-O6-e0L"/>
+                        <outlet property="garlicOutlet" destination="ILm-0s-vtJ" id="Ktf-qL-Ebo"/>
+                        <outlet property="jalapenosOutlet" destination="xHt-dK-xsR" id="VLY-VZ-urh"/>
+                        <outlet property="ketchupOutlet" destination="4jO-QR-cjd" id="mYa-K4-Mbq"/>
+                        <outlet property="lettuceOutlet" destination="2Ul-cq-Bph" id="ptA-SF-JDY"/>
+                        <outlet property="mayoOutlet" destination="TpQ-CL-ESZ" id="DCc-a6-DIL"/>
+                        <outlet property="mushroomsOutlet" destination="qDu-qI-32V" id="11C-1y-wTh"/>
+                        <outlet property="mustardOutlet" destination="eaS-NG-KA5" id="tMc-fu-pip"/>
+                        <outlet property="onionsOutlet" destination="B79-jE-7cK" id="j6e-H4-3f3"/>
+                        <outlet property="peppersOutlet" destination="eln-Pf-pAD" id="BKS-94-ms5"/>
+                        <outlet property="picklesOutlet" destination="0us-9t-jGZ" id="I7t-Lz-jNA"/>
+                        <outlet property="tomatoesOutlet" destination="joO-NO-bjL" id="KTG-zi-HSg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1067.6923076923076" y="71.800947867298575"/>
         </scene>
-        <!--View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="Hzj-Bt-F0f">
             <objects>
-                <viewController id="cGs-En-HPP" sceneMemberID="viewController">
+                <viewController id="cGs-En-HPP" customClass="SecondViewController" customModule="Burger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hy2-26-0BR">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Up8-Bm-rKy">
+                                <rect key="frame" x="29" y="101" width="331" height="709"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="bbn-1e-sAu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Pvi-Bh-fmz"/>
+                    <connections>
+                        <outlet property="textViewOutlet" destination="Up8-Bm-rKy" id="GDd-eR-XCI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ACi-uK-rf4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -323,6 +354,9 @@
     </scenes>
     <resources>
         <image name="burger" width="2000" height="1636"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

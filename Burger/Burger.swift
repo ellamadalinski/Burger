@@ -22,6 +22,8 @@ public class Burger{
     var type : burgerTypes
     var cooked : burgerCooked
     var toppings : [String] = []
+    var on = ""
+    var price = 0.0
     
     
     init(t : Int, c : Int, top : [String], p : Double){
@@ -52,10 +54,27 @@ public class Burger{
         }
         
         toppings = top
+        price = p
     }
     
     
-    
+    func toString()-> String{
+        for t in toppings{
+            if(toppings[0] == t)
+            {
+                on += "\(t)"
+            }
+            else{
+                on += ", \(t)"
+            }
+        }
+        if(cooked == .mediumWell){
+            return "$\(price): \(type) burger cooked medium well with \(on)"
+        }
+        else{
+            return "$\(price): \(type) burger cooked \(cooked) with \(on)"
+        }
+    }
     
     
     
