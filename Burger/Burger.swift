@@ -34,7 +34,7 @@ public class Burger{
             type = .atlanta
         case 2:
             type = .hawaiian
-        case 4:
+        case 3:
             type = .wisconsin
         default:
             type = .chicago
